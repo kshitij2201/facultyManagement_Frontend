@@ -53,7 +53,7 @@ export default function UserProfile({ userData }) {
       setIsLoading(true);
       try {
         console.log("Fetching profile with token:", userData?.token);
-        const response = await fetch("http://localhost:5000/api/auth/profile", {
+        const response = await fetch("faculty-management-backend.vercel.app/api/auth/profile", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",

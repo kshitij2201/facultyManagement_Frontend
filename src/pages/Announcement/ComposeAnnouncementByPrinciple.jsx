@@ -37,7 +37,7 @@ const AnnouncementForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/announcements", formData);
+      await axios.post("faculty-management-backend.vercel.app/api/announcements", formData);
       alert("Announcement Created Successfully");
       setFormData({
         title: "",
@@ -56,7 +56,7 @@ const AnnouncementForm = () => {
   const fetchAnnouncements = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/announcements/${currentDashboard}`
+        `faculty-management-backend.vercel.app/api/announcements/${currentDashboard}`
       );
       setAnnouncements(res.data);
       setLoading(false);

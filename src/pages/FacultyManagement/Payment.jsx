@@ -38,7 +38,7 @@ export default function SalaryRecords() {
   useEffect(() => {
     const fetchRecords = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/salary");
+        const response = await axios.get("faculty-management-backend.vercel.app/api/salary");
         setRecords(Array.isArray(response.data) ? response.data : []);
       } catch (err) {
         setError(
@@ -59,7 +59,7 @@ export default function SalaryRecords() {
         setDetailLoading(true);
         try {
           const response = await axios.get(
-            `http://localhost:5000/api/salary/${selectedEmployeeId}`
+            `faculty-management-backend.vercel.app/api/salary/${selectedEmployeeId}`
           );
           const record = {
             ...response.data,
@@ -212,7 +212,7 @@ export default function SalaryRecords() {
       setValidationErrors({});
 
       const response = await axios.put(
-        `http://localhost:5000/api/salary/${selectedEmployeeId}`,
+        `faculty-management-backend.vercel.app/api/salary/${selectedEmployeeId}`,
         editFormData
       );
 

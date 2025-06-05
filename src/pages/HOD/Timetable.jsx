@@ -98,7 +98,7 @@ export default function CourseTimeTable({ userData }) {
       try {
         if (!department) return;
         const response = await axios.get(
-          "http://localhost:5000/api/faculty/faculties",
+          "faculty-management-backend.vercel.app/api/faculty/faculties",
           { params: { department } }
         );
         const facultyArray =
@@ -122,7 +122,7 @@ export default function CourseTimeTable({ userData }) {
       try {
         if (!department) return;
         const response = await axios.get(
-          "http://localhost:5000/api/faculty/math-teachers",
+          "faculty-management-backend.vercel.app/api/faculty/math-teachers",
           { params: { department } }
         );
         const mathTeachersArray =
@@ -149,7 +149,7 @@ export default function CourseTimeTable({ userData }) {
       try {
         if (!employeeId) throw new Error("Employee ID not set");
         const response = await axios.get(
-          "http://localhost:5000/api/timetable",
+          "faculty-management-backend.vercel.app/api/timetable",
           {
             params: { employeeId },
           }
@@ -225,7 +225,7 @@ export default function CourseTimeTable({ userData }) {
         )
       );
       const response = await axios.post(
-        "http://localhost:5000/api/timetable",
+        "faculty-management-backend.vercel.app/api/timetable",
         {
           employeeId,
           collegeInfo,
@@ -300,7 +300,7 @@ export default function CourseTimeTable({ userData }) {
       const token = localStorage.getItem("token") || userData?.token || "";
       console.log("Update Token:", token);
       const response = await axios.put(
-        `http://localhost:5000/api/timetable/${cleanTimetableId}`,
+        `faculty-management-backend.vercel.app/api/timetable/${cleanTimetableId}`,
         {
           employeeId,
           collegeInfo,

@@ -40,7 +40,7 @@ export default function ApplyChargeHandoverForm() {
           return;
         }
 
-        const response = await fetch("http://localhost:5000/api/auth/profile", {
+        const response = await fetch("faculty-management-backend.vercel.app/api/auth/profile", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -140,7 +140,7 @@ export default function ApplyChargeHandoverForm() {
         throw new Error("Authentication token not found. Please log in again.");
       }
 
-      await axios.post("http://localhost:5000/api/tasks", payload, {
+      await axios.post("faculty-management-backend.vercel.app/api/tasks", payload, {
         headers: { Authorization: `Bearer ${token}` },
       });
 

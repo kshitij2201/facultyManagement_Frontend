@@ -52,7 +52,7 @@ export default function DepartmentFaculty({ userData }) {
         setUserDepartment(department);
 
         const response = await fetch(
-          `http://localhost:5000/api/faculty/faculties?department=${encodeURIComponent(
+          `faculty-management-backend.vercel.app/api/faculty/faculties?department=${encodeURIComponent(
             department
           )}`
         );
@@ -87,7 +87,7 @@ export default function DepartmentFaculty({ userData }) {
           department
         );
         const response = await fetch(
-          `http://localhost:5000/api/faculty/cc-assignments?department=${encodeURIComponent(
+          `faculty-management-backend.vercel.app/api/faculty/cc-assignments?department=${encodeURIComponent(
             department
           )}`
         );
@@ -185,7 +185,7 @@ export default function DepartmentFaculty({ userData }) {
       const department = normalizeDepartment(selectedFaculty.department);
       console.log("[AssignCC] Sending department:", department);
       const response = await fetch(
-        "http://localhost:5000/api/faculty/assign-cc",
+        "faculty-management-backend.vercel.app/api/faculty/assign-cc",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -213,7 +213,7 @@ export default function DepartmentFaculty({ userData }) {
       );
 
       const updatedAssignmentsResponse = await fetch(
-        `http://localhost:5000/api/faculty/cc-assignments?department=${encodeURIComponent(
+        `faculty-management-backend.vercel.app/api/faculty/cc-assignments?department=${encodeURIComponent(
           department
         )}`
       );
@@ -245,7 +245,7 @@ export default function DepartmentFaculty({ userData }) {
     try {
       const department = normalizeDepartment(assignment.department);
       const response = await fetch(
-        "http://localhost:5000/api/faculty/delete-cc-assignment",
+        "faculty-management-backend.vercel.app/api/faculty/delete-cc-assignment",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -268,7 +268,7 @@ export default function DepartmentFaculty({ userData }) {
 
       console.log("[DeleteCC] Success response:", responseData);
       const updatedAssignmentsResponse = await fetch(
-        `http://localhost:5000/api/faculty/cc-assignments?department=${encodeURIComponent(
+        `faculty-management-backend.vercel.app/api/faculty/cc-assignments?department=${encodeURIComponent(
           department
         )}`
       );

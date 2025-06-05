@@ -78,7 +78,7 @@ const ApplyLeave = ({ userData }) => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/leave/apply",
+        "faculty-management-backend.vercel.app/api/leave/apply",
         formData
       );
       setMessage(response.data.message);

@@ -32,7 +32,7 @@ export default function AllFaculty() {
       try {
         setLoading(true);
         const response = await fetch(
-          "http://localhost:5000/api/faculty/faculties"
+          "faculty-management-backend.vercel.app/api/faculty/faculties"
         );
         if (!response.ok) {
           throw new Error("Failed to fetch faculty data");

@@ -35,7 +35,7 @@ const ApproveLeaveByPrincipal = ({ userData }) => {
       try {
         setLoading(true);
         const response = await axios.get(
-          `http://localhost:5000/api/leave/principal/${encodeURIComponent(
+          `faculty-management-backend.vercel.app/api/leave/principal/${encodeURIComponent(
             department
           )}`,
           {
@@ -91,7 +91,7 @@ const ApproveLeaveByPrincipal = ({ userData }) => {
       }
 
       const response = await axios.put(
-        `http://localhost:5000/api/leave/principal/${decision.leaveId}`,
+        `faculty-management-backend.vercel.app/api/leave/principal/${decision.leaveId}`,
         {
           principalEmployeeId,
           decision: decision.decision,
@@ -108,7 +108,7 @@ const ApproveLeaveByPrincipal = ({ userData }) => {
 
       // Refresh leaves
       const leavesResponse = await axios.get(
-        `http://localhost:5000/api/leave/principal/${encodeURIComponent(
+        `faculty-management-backend.vercel.app/api/leave/principal/${encodeURIComponent(
           department
         )}`,
         {

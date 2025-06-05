@@ -52,7 +52,7 @@ export default function FacultyDashboard() {
         setLoading(true);
         setError(null);
         const response = await fetch(
-          "http://localhost:5000/api/faculty/faculties?limit=1000",
+          "faculty-management-backend.vercel.app/api/faculty/faculties?limit=1000",
           {
             headers: { "Content-Type": "application/json" },
           }
@@ -76,7 +76,7 @@ export default function FacultyDashboard() {
       } catch (err) {
         console.error("Fetch faculties error:", err);
         setError(
-          `Error fetching faculty data: ${err.message}. Please check if the backend server is running at http://localhost:5000.`
+          `Error fetching faculty data: ${err.message}. Please check if the backend server is running at faculty-management-backend.vercel.app.`
         );
         setLoading(false);
       }
@@ -89,10 +89,10 @@ export default function FacultyDashboard() {
     const fetchHistory = async () => {
       try {
         const hodResponse = await fetch(
-          "http://localhost:5000/api/faculty/hod-history"
+          "faculty-management-backend.vercel.app/api/faculty/hod-history"
         );
         const principalResponse = await fetch(
-          "http://localhost:5000/api/faculty/principal-history"
+          "faculty-management-backend.vercel.app/api/faculty/principal-history"
         );
         if (hodResponse.ok) {
           const hodData = await hodResponse.json();
@@ -167,7 +167,7 @@ export default function FacultyDashboard() {
     try {
       setFormLoading(true);
       const response = await fetch(
-        `http://localhost:5000/api/faculty/assign-${formData.role}`,
+        `faculty-management-backend.vercel.app/api/faculty/assign-${formData.role}`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

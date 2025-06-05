@@ -54,7 +54,7 @@ const StaffSidebar = ({ isOpen, handleMenuClick, userData }) => {
           department,
         });
         const response = await fetch(
-          `http://localhost:5000/api/faculty/cc-assignments?department=${encodeURIComponent(
+          `faculty-management-backend.vercel.app/api/faculty/cc-assignments?department=${encodeURIComponent(
             department
           )}`,
           {

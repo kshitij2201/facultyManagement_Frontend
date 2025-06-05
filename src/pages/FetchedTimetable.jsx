@@ -26,7 +26,7 @@ function FetchedTimetable() {
         setUserDepartment(user.department);
 
         // Backend API URL
-        const apiUrl = `http://localhost:5000/api/timetable?department=${encodeURIComponent(
+        const apiUrl = `faculty-management-backend.vercel.app/api/timetable?department=${encodeURIComponent(
           user.department
         )}`;
         console.log("Fetching from:", apiUrl);

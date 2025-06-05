@@ -426,7 +426,7 @@ const FacultyRegistrationForm = () => {
 
       // 1. Register Faculty
       const facultyResponse = await fetch(
-        "http://localhost:5000/api/faculty/register",
+        "faculty-management-backend.vercel.app/api/faculty/register",
         {
           method: "POST",
           body: formDataToSubmit,
@@ -447,7 +447,7 @@ const FacultyRegistrationForm = () => {
         type: formData.type,
       };
 
-      const salaryResponse = await fetch("http://localhost:5000/api/salary", {
+      const salaryResponse = await fetch("faculty-management-backend.vercel.app/api/salary", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

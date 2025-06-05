@@ -16,7 +16,7 @@ export default function SalarySlipPage({ userData }) {
     const fetchRecords = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/salary?employeeId=${employeeId}`
+          `faculty-management-backend.vercel.app/api/salary?employeeId=${employeeId}`
         );
 
         const data = Array.isArray(response.data) ? response.data : [];

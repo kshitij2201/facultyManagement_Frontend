@@ -26,7 +26,7 @@ const ApproveLeave = ({ userData }) => {
       try {
         setLoading(true);
         const res = await axios.get(
-          `http://localhost:5000/api/leave/hod/${encodeURIComponent(
+          `faculty-management-backend.vercel.app/api/leave/hod/${encodeURIComponent(
             department
           )}`,
           {
@@ -71,7 +71,7 @@ const ApproveLeave = ({ userData }) => {
     try {
       setLoading(true);
       const res = await axios.put(
-        `http://localhost:5000/api/leave/hod/${decision.leaveId}`,
+        `faculty-management-backend.vercel.app/api/leave/hod/${decision.leaveId}`,
         {
           hodEmployeeId,
           decision: decision.decision,

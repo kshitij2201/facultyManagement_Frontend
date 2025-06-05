@@ -16,7 +16,7 @@ export default function FacultyDataInPrincipal() {
         setLoading(true);
         setError(null);
         const response = await fetch(
-          "http://localhost:5000/api/faculty/faculties",
+          "faculty-management-backend.vercel.app/api/faculty/faculties",
           {
             headers: { "Content-Type": "application/json" },
           }
@@ -40,7 +40,7 @@ export default function FacultyDataInPrincipal() {
       } catch (err) {
         console.error("Fetch faculties error:", err);
         setError(
-          `Error fetching faculty data: ${err.message}. Please check if the backend server is running at http://localhost:5000.`
+          `Error fetching faculty data: ${err.message}. Please check if the backend server is running at faculty-management-backend.vercel.app.`
         );
         setLoading(false);
       }
